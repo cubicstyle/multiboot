@@ -44,9 +44,9 @@ void WaitSPI32(uint32_t w, uint32_t comp, char* msg)
 	} while(r != comp);
 }
 
-void main(void)
+void main(int argc, char *argv[])
 {
-	FILE *fp = fopen("multiboot_mb.gba", "rb");
+	FILE *fp = fopen(argv[1], "rb");
 	if(fp == NULL)
 	{
 		printf("Err: Can't open file\n");
